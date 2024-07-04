@@ -1,0 +1,22 @@
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.title {
+  font-family: Roboto;
+  font-size: 200%;
+  text-align: center;
+}
+
+.navbar {
+  font-family: Roboto;
+  font-size: 150%;
+  text-align: center;
+}
+
+
+.spacer {
+  padding-top:1%;
+}

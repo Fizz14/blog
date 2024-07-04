@@ -1,0 +1,33 @@
+.padding {
+  padding:1%;
+  background-color: #e9e9ed;
+  border: 1px lightgray solid;
+}
+
+.major {
+  background-color: #e9e9ed;
+  align: left;
+  text-align: left;
+  margin: 1%;
+
+  display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spacer {
+  padding-top:1%;
+}
+
+a {
+  float:left;
+}
+
+img {
+  width:100%;
+  height:auto;
+}
+
+

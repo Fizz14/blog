@@ -1,0 +1,12 @@
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  font-family: Roboto;
+}
+.spacer {
+  padding-top:1%;
+}
