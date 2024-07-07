@@ -7,7 +7,7 @@ import { Post } from './post.model';
   providedIn: 'root'
 })
 export class PostService {
-  private apiUrl = 'http://localhost:8080/api/posts';
+  private apiUrl = 'http://127.0.0.1:8080/api/posts';
 
   constructor(private http: HttpClient) {}
 
