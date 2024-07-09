@@ -1,0 +1,14 @@
+Title: First Article
+Date: 2024-07-07
+Category: Technology
+Content: This is the content of the first article.
+It has multiple lines and, of course, commas.
+
+---END---
+Title: Second Article
+Date: 2024-07-08
+Category: Health
+Content: This is the content of the second article.
+It also has multiple lines and, naturally, commas.
+
+---END---

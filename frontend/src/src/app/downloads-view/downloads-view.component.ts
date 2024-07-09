@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../navigation.service';
 import { CommonModule } from '@angular/common';
+import { CardComponent} from '../card/card.component';
 
 @Component({
-  selector: 'app-articles-button',
+  selector: 'app-downloads-view',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './articles-button.component.html',
-  styleUrl: './articles-button.component.css'
+  imports: [CommonModule, CardComponent],
+  templateUrl: './downloads-view.component.html',
+  styleUrl: './downloads-view.component.css'
 })
-export class ArticlesButtonComponent {
-
+export class DownloadsViewComponent {
   navigationIndexEndpoint: number = 0;
 
   constructor(private navigationService: NavigationService) { }
@@ -20,10 +20,5 @@ export class ArticlesButtonComponent {
       this.navigationIndexEndpoint = newView;
     });
   }
-
-  articlesButtonClicked() {
-    this.navigationService.changeView(1);
-  }
-
 
 }

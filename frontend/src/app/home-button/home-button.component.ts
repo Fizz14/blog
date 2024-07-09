@@ -3,13 +3,13 @@ import { NavigationService } from '../navigation.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-articles-button',
+  selector: 'app-home-button',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './articles-button.component.html',
-  styleUrl: './articles-button.component.css'
+  templateUrl: './home-button.component.html',
+  styleUrl: './home-button.component.css'
 })
-export class ArticlesButtonComponent {
+export class HomeButtonComponent {
 
   navigationIndexEndpoint: number = 0;
 
@@ -21,8 +21,8 @@ export class ArticlesButtonComponent {
     });
   }
 
-  articlesButtonClicked() {
-    this.navigationService.changeView(1);
+  homeButtonClicked() {
+    this.navigationService.changeView(0);
   }
 
 

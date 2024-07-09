@@ -1,10 +1,17 @@
 span {
-  display:inline-flex;
+  /*display:inline-flex;*/
   width:10%;
 }
 
 button {
   font-size: 100%;
-  flex: 1;
-  border: 1px lightgray solid;
+  /*flex: 1;*/
+  border: 0px;
+  background-color:lightgrey;
+  padding-left: 1%;
+  padding-right:1%;
+}
+
+button:hover {
+  color: chocolate;
 }

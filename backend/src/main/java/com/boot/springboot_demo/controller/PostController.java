@@ -32,22 +32,42 @@ public class PostController {
   @PostConstruct
   public void init() {
     Long baseId = 1L;
+    Integer buflen = 50;
+    Integer offset = 0;
 
     try (BufferedReader reader = new BufferedReader(new InputStreamReader( new ClassPathResource("posts.csv").getInputStream()))) {
-      String line;
-      while ((line =  reader.readLine()) != null) {
-        String[] fields = line.split(",");
+      char[] buf;
+      while(true) {
+        reader.read(buf, offset, buflen);
+  
         Post post = new Post();
         post.setId(baseId);
-        post.setTitle(fields[0]);
-        post.setContent(fields[1]);
-        postRepository.save(post);
-        post.getContent();
+        post.setTitle(buf);
+        post.setContent(buf);
+        post.Repository.save(post);
         post.getId();
-        System.out.println("Loaded post with title " + post.getTitle());
+        post.getTitle();
+        post.getContent();
         baseId ++;
-
+        offset += buflen;
+        if(
       }
+      
+
+//      String line;
+//      while ((line =  reader.readLine()) != null) {
+//        String[] fields = line.split("`");
+//        Post post = new Post();
+//        post.setId(baseId);
+//        post.setTitle(fields[0]);
+//        post.setContent(fields[1]);
+//        postRepository.save(post);
+//        post.getContent();
+//        post.getId();
+//        System.out.println("Loaded post with title " + post.getTitle());
+//        baseId ++;
+//
+//      }
 
     } catch (IOException e) {
       e.printStackTrace();

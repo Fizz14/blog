@@ -22,7 +22,7 @@ export class ArticlesButtonComponent {
   }
 
   articlesButtonClicked() {
-    this.navigationService.changeView(1);
+    this.navigationService.changeView(0);
   }
 
 
