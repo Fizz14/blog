@@ -18,3 +18,10 @@ pre {
   overflow-x: auto;
   word-wrap: break-word;
 }
+
+.card {
+  border: 1px solid lightgray;
+  background-color: #e9e9ed;
+  margin-bottom: 1%;
+  padding-bottom: none;
+}

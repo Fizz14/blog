@@ -2,11 +2,15 @@ export class Post {
   id?: number;
   title: string;
   content: string;
+  postedDate: string;
+  category: string;
   
-  constructor(title: string, content: string, id?: number)   {
+  constructor(id?: number, title: string, content: string, postedDate: string, category: string)   {
+    this.id = id;
     this.title = title;
     this.content = content;
-    this.id = id;
+    this.postedDate = postedDate;
+    this.category = category;
 
   }
 }

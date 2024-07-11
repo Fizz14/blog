@@ -8,7 +8,8 @@
   font-family: Roboto;
   font-size: 200%;
   text-align: center;
-  background-color: lightgrey;
+  color: chocolate;
+  background-color: #e9e9ed;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -31,21 +32,28 @@ li {
   font-family: Roboto;
   font-size: 150%;
   text-align: center;
-  background-color: lightgrey;
+  background-color: #e9e9ed;
   padding-bottom: 1%;
+  border-bottom: 1px solid lightgray;
 }
 
 
 .spacer {
   padding-top:1%;
+  background-color:#ffffff;
 }
 
 .navspacer {
   padding-top:1%;
-  background-color: lightgrey;
+  background-color: #e9e9ed;
 }
 
 ::ng-deep * {
   margin:0;
   padding:0;
 }
+
+.mainpage {
+  background-color:#ffffff;
+}
+

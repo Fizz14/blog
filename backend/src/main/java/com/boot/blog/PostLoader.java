@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDate;
 import com.boot.blog.model.Post;
 import org.springframework.core.io.ClassPathResource;
 
@@ -16,7 +15,7 @@ public class PostLoader {
         List<Post> Posts = new ArrayList<>();
         StringBuilder contentBuilder = new StringBuilder();
         String title = null;
-        LocalDate postedDate = null;
+        String postedDate = null;
         String category = null;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -25,30 +24,29 @@ public class PostLoader {
             while ((line = reader.readLine()) != null) {
                 if (line.startsWith("Title: ")) {
                     if (title != null) {
-                        Posts.add(new Post(title, contentBuilder.toString().trim(), postedDate, category));
+                        Posts.add(new Post(title, contentBuilder.toString(), postedDate, category));
                         contentBuilder.setLength(0); // Clear the content builder
                     }
                     title = line.substring(7); // Extract the title
                 } else if (line.startsWith("Date: ")) {
-                    postedDate = LocalDate.parse(line.substring(6)); // Extract the date
+                    postedDate = line.substring(6); // Extract the date
                 } else if (line.startsWith("Category: ")) {
                     category = line.substring(10); // Extract the category
                 } else if (line.equals("---END---")) {
                     if (title != null) {
-                        Posts.add(new Post(title, contentBuilder.toString().trim(), postedDate, category));
+                        Posts.add(new Post(title, contentBuilder.toString().substring(9), postedDate, category));
                         title = null;
                         contentBuilder.setLength(0); // Clear the content builder
                     }
                 } else {
-                    contentBuilder.append(line).append("\n");
+                    contentBuilder.append(line).append("<br>");
                 }
             }
             // Add the last Post if the file doesn't end with the delimiter
             if (title != null) {
-                Posts.add(new Post(title, contentBuilder.toString().trim(), postedDate, category));
+                Posts.add(new Post(title, contentBuilder.toString().substring(9), postedDate, category));
             }
         }
-
         return Posts;
     }
 

@@ -1,11 +1,10 @@
 package com.boot.blog.model;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Column;
 
 @Entity
 public class Post {
@@ -13,13 +12,14 @@ public class Post {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private String title;
+  @Column(columnDefinition="TEXT")
   private String content;
-  private LocalDate postedDate;
+  private String postedDate;
   private String category;
 
   public Post() {}
 
-  public Post(String p_title, String p_content, LocalDate p_postedDate, String p_category) {
+  public Post(String p_title, String p_content, String p_postedDate, String p_category) {
     title = p_title;
     content = p_content;
     postedDate = p_postedDate;
@@ -48,5 +48,13 @@ public class Post {
 
   public String getContent() {
     return content;
+  }
+
+  public String getPostedDate() {
+    return postedDate;
+  }
+
+  public String getCategory() {
+    return category;
   }
 }

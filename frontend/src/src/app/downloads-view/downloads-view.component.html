@@ -1,6 +1,18 @@
-<div *ngIf="navigationIndexEndpoint===2">Download things here.
+<div *ngIf="navigationIndexEndpoint===2">
 <div class="spacer"></div>
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
+  <app-card
+    title="My Game"
+    content = "This is my awesome game, I hope everyone loves it!"
+    [url]="'https://google.com'"
+    ></app-card>
+  <app-card
+    title="My Game 2"
+    content = "This is a sequel to my awesome game, I hope everyone loves it!"
+    [url]="'https://sourceforge.com'"
+    ></app-card>
+  <app-card
+    title="Nice utility"
+    content = "This is a utility for my awesome game, I hope everyone loves it!"
+    [url]="'https://github.com'"
+    ></app-card>
 </div>

@@ -13,6 +13,8 @@ import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.Collections;
 
 import com.boot.blog.model.Post;
 import com.boot.blog.repository.PostRepository;
@@ -50,19 +52,31 @@ public class PostController {
     System.out.println("");
   }
 
-  @GetMapping("/api/posts")
+  @GetMapping("/api/posts/all")
   public List<Post> getAllPosts() {
     System.out.println("");
-    System.out.println("Posts were retrieved");
+    System.out.println("All posts were retrieved");
     System.out.println("");
 
     return postRepository.findAll();
   }
 
-//  @GetMapping
-//  public List<Post> getAllPosts() {
-//    return postRepository.findAll();
-//  }
+  @GetMapping("/api/posts/recent")
+  public List<Post> getRecentPosts() {
+    System.out.println("");
+    System.out.println("Recent posts were retrieved");
+    System.out.println("");
+
+    List<Post> posts = postRepository.findAll();
+
+    if(posts.size() > 3) {
+      List<Post> recentPosts = posts.subList(posts.size() - 3, posts.size());
+      Collections.reverse(recentPosts);
+      return recentPosts;
+    } else {
+      return posts;
+    }
+  }
 
   @PostMapping
   public Post createPost(@RequestBody Post post) {

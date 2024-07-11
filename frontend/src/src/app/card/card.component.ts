@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -8,7 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  title: string = "Title of Download";
-  content: string = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a eros quam. Duis et convallis ex, eu placerat diam. Suspendisse porttitor augue sit amet turpis accumsan ultrices. Nullam mollis sodales massa, elementum sodales nibh suscipit non. Donec volutpat interdum cursus. Duis gravida eros.";
+
+  @Input() title: string = "";
+  @Input() content: string = "";
+  @Input() url: string = "";
+
+  openExternalLink(): void {
+    if(this.url) {
+      window.open(this.url, '_blank');
+    }
+
+  }
 
 }
