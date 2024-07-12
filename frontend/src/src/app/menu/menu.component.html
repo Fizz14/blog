@@ -1,7 +1,15 @@
 <div>
-<button class="f" (click)=firstArticle()><<</button>
-<button class="p" (click)=previousArticle()><</button>
-<button class="p" (click)=randomArticle()>?</button>
-<button class="p" (click)=nextArticle()>></button>
-<button class="l" (click)=lastArticle()>>></button>
+  <button class="f" (click)="firstArticle()" (mouseover)="fhover=1" (mouseleave)="fhover=0" [ngStyle]="{'color': articleIndexEndpoint === 0 ? 'lightgray' : fhover === 0 ? 'black' : 'chocolate'}">
+    <<
+  </button>
+  <button class="p" (click)="previousArticle()" (mouseover)="phover=1" (mouseleave)="phover=0" [ngStyle]="{'color': articleIndexEndpoint === 0 ? 'lightgray' : phover === 0 ? 'black' : 'chocolate'}">
+    <
+  </button>
+<button class="r" (click)=randomArticle()>?</button>
+  <button class="n" (click)="nextArticle()" (mouseover)="nhover=1" (mouseleave)="nhover=0" [ngStyle]="{'color': articleIndexEndpoint === (numPosts-1) ? 'lightgray' : nhover === 0 ? 'black' : 'chocolate'}">
+    >
+  </button>
+  <button class="l" (click)="lastArticle()" (mouseover)="lhover=1" (mouseleave)="lhover=0" [ngStyle]="{'color': articleIndexEndpoint === (numPosts-1) ? 'lightgray' : lhover === 0 ? 'black' : 'chocolate'}">
+    >>
+  </button>
 </div>

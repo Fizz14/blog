@@ -5,13 +5,29 @@ span {
 
 button {
   font-size: 100%;
-  /*flex: 1;*/
   border: 0px;
   background-color: #e9e9ed;
   padding-left: 1%;
   padding-right:1%;
+  box-sizing: border-box;
+  width: 100px;
 }
 
 button:hover {
   color: chocolate;
 }
+
+/*
+button::before {
+  font-size: 100%;
+  border: 0px;
+  background-color: #e9e9ed;
+  padding-left: 1%;
+  padding-right: 1%;
+  font-weight:bold;
+  content: attr(title);
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+*/

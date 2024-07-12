@@ -10,6 +10,8 @@ button {
   background-color: #e9e9ed;
   padding-left: 1%;
   padding-right:1%;
+  box-sizing: border-box;
+  width: 160px;
 }
 
 button:hover {

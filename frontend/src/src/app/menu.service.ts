@@ -36,5 +36,9 @@ export class MenuService {
     this.numPosts = numPosts;
   }
 
+  getNumPosts() {
+    return this.numPosts;
+  }
+
 
 }
