@@ -3,13 +3,13 @@ import { NavigationService } from '../navigation.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-downloads-button',
+  selector: 'app-archive-button',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './downloads-button.component.html',
-  styleUrl: './downloads-button.component.css'
+  templateUrl: './archive-button.component.html',
+  styleUrl: './archive-button.component.css'
 })
-export class DownloadsButtonComponent {
+export class ArchiveButtonComponent {
 
   navigationIndexEndpoint: number = 0;
 
@@ -21,8 +21,7 @@ export class DownloadsButtonComponent {
     });
   }
 
-  downloadsButtonClicked() {
-    this.navigationService.changeView(3);
+  archiveButtonClicked() {
+    this.navigationService.changeView(2);
   }
-
 }

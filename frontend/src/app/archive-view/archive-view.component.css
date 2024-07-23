@@ -1,0 +1,47 @@
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  font-family: Roboto;
+  padding: 0.3%;
+}
+
+hr {
+  visibility: hidden;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  word-wrap: break-word;
+}
+
+.buttonAndField {
+  display: flex;
+  justify-content: center;
+}
+
+.postLink {
+  text-align: left;
+  background: none;
+  color: blue;
+  border: none;
+  font: inherit;
+  outline: inherit;
+}
+
+button {
+
+}
+
+h2 {
+  text-align: left;
+}
+
+.card {
+  margin-bottom: 1%;
+  padding-bottom: none;
+}

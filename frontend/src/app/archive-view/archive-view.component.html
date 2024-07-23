@@ -1,0 +1,17 @@
+<div *ngIf="navigationIndexEndpoint===2">
+<div class="spacer"></div>
+  <br>
+
+  <div class = "buttonAndField">
+    <input type="text" id = "searchInput" (keyup.enter)="searchButtonClicked()">
+    <button type="button" (click)="searchButtonClicked()">Search</button>
+  </div>
+
+  <div class="card" *ngFor="let post of searchResults">
+    <button class="postLink" (click)="goToArticle(post.id || 0)">{{post.title}}</button>
+    <p>{{post.postedDate | date: 'MMMM d, y'}}</p>
+    <p>{{post.category}}</p>
+    <!--pre><p [innerHTML]="post.content"></p></pre-->
+    <hr>
+  </div>
+</div>

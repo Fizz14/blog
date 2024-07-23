@@ -1,0 +1,10 @@
+<div *ngIf="navigationIndexEndpoint===0">
+  <div class="spacer"></div>
+  <div class="card" *ngFor="let post of posts">
+    <h2>{{post.title}}</h2>
+    <p>{{post.postedDate | date: 'MMMM d, y'}}</p>
+    <p>{{post.category}}</p>
+    <pre><p [innerHTML]="post.content"></p></pre>
+    <hr>
+  </div>
+</div>

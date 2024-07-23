@@ -18,3 +18,8 @@ pre {
   overflow-x: auto;
   word-wrap: break-word;
 }
+
+.card {
+  margin-bottom: 1%;
+  padding-bottom: none;
+}

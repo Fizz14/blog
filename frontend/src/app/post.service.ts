@@ -7,15 +7,25 @@ import { Post } from './post.model';
   providedIn: 'root'
 })
 export class PostService {
-  private apiUrl = 'http://127.0.0.1:8080/api/posts';
+  private allUrl = 'http://127.0.0.1:8080/api/posts/all';
+  private recentUrl = 'http://127.0.0.1:8080/api/posts/recent';
+  private searchUrl = 'http://127.0.0.1:8080/api/posts/search';
 
   constructor(private http: HttpClient) {}
 
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.apiUrl);
+  getAllPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.allUrl);
+  }
+
+  getRecentPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.recentUrl);
+  }
+
+  searchPosts(searchTerm: String): Observable<Post[]> {
+    return this.http.post<Post[]>(this.searchUrl, searchTerm);
   }
   
   createPost(post: Post): Observable<Post> {
-    return this.http.post<Post>(this.apiUrl, post);
+    return this.http.post<Post>(this.allUrl, post);
   }
 }

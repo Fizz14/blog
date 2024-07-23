@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.data.domain.Example;
 
 import com.boot.blog.PostLoader;
 import jakarta.annotation.PostConstruct;
@@ -74,8 +75,22 @@ public class PostController {
       Collections.reverse(recentPosts);
       return recentPosts;
     } else {
+      Collections.reverse(posts);
       return posts;
     }
+  }
+
+  @PostMapping("/api/posts/search")
+  public List<Post> searchPosts(@RequestBody String searchTerm) {
+
+    List<Post> posts = postRepository.findPostsByContent(searchTerm);
+
+
+    System.out.println("");
+    System.out.println(searchTerm);
+    System.out.println(posts.size());
+    System.out.println("");
+    return posts;
   }
 
   @PostMapping

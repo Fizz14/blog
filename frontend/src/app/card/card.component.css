@@ -1,33 +1,44 @@
 .padding {
   padding:1%;
-  background-color: #e9e9ed;
-  border: 1px lightgray solid;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: -0.5%;
+  margin-bottom: -0.5%;
+  background-color:#4298b5;
+  border: 0px lightgray solid;
 }
 
 .major {
-  background-color: #e9e9ed;
-  align: left;
-  text-align: left;
-  margin: 1%;
+  background-color:#4298b5;
+  display: inline-block;
+  color: white;
+  border-radius: 15px;
+  padding:15px;
+  margin-left:16px;
+  margin-bottom: 8px;
+  width: 96%;
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.2);
 
-  display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
+
+.text {
+  padding: none;
+  margin: none;
+}
+
 
 .spacer {
   padding-top:1%;
 }
 
-a {
+button {
   float:left;
+  margin-right: 1%;
 }
 
 img {
-  width:100%;
-  height:auto;
+  width:90%;
+  height:90%;
 }
 
 
