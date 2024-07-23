@@ -82,15 +82,18 @@ public class PostController {
 
   @PostMapping("/api/posts/search")
   public List<Post> searchPosts(@RequestBody String searchTerm) {
-
     List<Post> posts = postRepository.findPostsByContent(searchTerm);
+    List<Post> titlePosts = postRepository.findPostsByTitle(searchTerm);
+
+    posts.removeAll(titlePosts);
+    titlePosts.addAll(posts);
 
 
     System.out.println("");
     System.out.println(searchTerm);
     System.out.println(posts.size());
     System.out.println("");
-    return posts;
+    return titlePosts;
   }
 
   @PostMapping

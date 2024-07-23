@@ -13,4 +13,7 @@ import com.boot.blog.model.Post;
 public interface PostRepository extends JpaRepository<Post, Long> {
   @Query("SELECT p FROM Post p WHERE LOWER(p.content) LIKE LOWER(CONCAT('%', :searchTerm, '%'))")
   List<Post> findPostsByContent(@Param("searchTerm") String searchTerm);
+
+  @Query("SELECT p FROM Post p WHERE LOWER(p.title) LIKE LOWER(CONCAT('%', :searchTerm, '%'))")
+  List<Post> findPostsByTitle(@Param("searchTerm") String searchTerm);
 }
