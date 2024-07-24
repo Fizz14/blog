@@ -1,4 +1,4 @@
-This is the repo for my small personal website with a homepage, blog posts, and downloads. Blog posts are served from a springboot server. Powered by Angular 18.
+This is the repo for a small personal website with a homepage, blog posts, and downloads. Blog posts are served from a springboot server. Powered by Angular 18.
 ![image](https://github.com/user-attachments/assets/815c4f1b-581d-42ba-b2ff-56b6af0c3a29)
 
 ![image](https://github.com/user-attachments/assets/63dc9da2-52d0-4356-ac88-e90174c0d940)
